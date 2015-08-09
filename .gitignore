@@ -4,3 +4,4 @@
 .jscsrc
 .jshintrc
 .travis.yml
+node_modules
