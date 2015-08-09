@@ -1,0 +1,252 @@
+//==================================
+// Helpers for Better LESS
+//==================================
+.background-size(@size){
+ -webkit-background-size: @size;
+ -moz-background-size: @size;
+ -o-background-size: @size;
+ background-size: @size;
+}
+
+.float(@float: left)
+{
+ display: inline-block;
+ float: @float;
+}
+
+.inline-block(@v-align)
+{
+  display: inline-block;
+  vertical-align: @v-align;
+}
+
+// give it a CSS property and a rem size
+// and it returns the px fallback and the rem
+.rem-to-px(@property: 'none', @size: 1)
+{
+ @prop: ~"@{property}";
+ @px: floor(@size * (@root-font-size * 1px));
+ @rem: @size * 1rem;
+ @{prop}: @px;
+ @{prop}: @rem;
+
+}
+
+.rem-to-pix(@property, @size) when (ispercentage(@size))
+{
+ @prop: ~"@{property}";
+ @{prop}: @size;
+}
+
+.rem-to-pix(@property, @size) when (isstring(@size))
+{
+ @prop: ~"@{property}";
+ @{prop}: auto;
+}
+
+.font-size(@size)
+{
+ .rem-to-px('font-size', @size);
+}
+
+.line-height(@size)
+{
+ .rem-to-px('line-height', @size);
+}
+
+/* ----------------------------------------------
+=============== Width / Height   ================
+-----------------------------------------------*/
+
+.width(@size) { .rem-to-px(@property: 'width', @size: @size) }
+.min-width(@size) { .rem-to-px(@property: 'min-width', @size: @size) }
+.max-width(@size) { .rem-to-px(@property: 'max-width', @size: @size) }
+
+.height(@size) { .rem-to-px(@property: 'height', @size: @size) }
+.min-height(@size) { .rem-to-px(@property: 'min-height', @size: @size) }
+.max-height(@size) { .rem-to-px(@property: 'max-height', @size: @size) }
+
+/* ----------------------------------------------
+=============== Padding Mixins   ================
+-----------------------------------------------*/
+
+.padding(@top: 0, @right: 0, @bottom: 0, @left: 0)
+{
+
+ // all-in-one
+ & when (@top > 0) and (@bottom = 0) and (@right = 0) and (@left = 0) {
+   .rem-to-px('padding', @top);
+ }
+
+ // top and bottoms
+ & when (@top > 0) and (@bottom = 0) {
+   .rem-to-px('padding-top', @top);
+   .rem-to-px('padding-bottom', @top);
+ }
+ & when (@top > 0) and (@bottom > 0) {
+   .rem-to-px('padding-bottom', @top);
+   .rem-to-px('padding-bottom', @bottom);
+ }
+
+ // right and lefts
+ & when (@right > 0) and (@left = 0) {
+   .rem-to-px('padding-left', @right);
+   .rem-to-px('padding-right', @right);
+ }
+ & when (@right > 0) and (@left > 0){
+   .rem-to-px('padding-left', @left);
+   .rem-to-px('padding-right', @right);
+ }
+}
+
+
+
+.padding-top(@p)
+{
+ .rem-to-px('padding-top', @p);
+}
+
+.padding-right(@p)
+{
+ .rem-to-px('padding-right', @p);
+}
+
+.padding-bottom(@p)
+{
+ .rem-to-px('padding-bottom', @p);
+}
+
+.padding-left(@p)
+{
+ .rem-to-px('padding-left', @p);
+}
+
+
+/* ----------------------------------------------
+=============== Margin Mixins ================
+-----------------------------------------------*/
+
+
+.margin(@top: 0, @right: 0, @bottom: 0, @left: 0)
+{
+
+ // all-in-one
+ & when (@top > 0) and (@bottom = 0) and (@right = 0) and (@left = 0) {
+   .rem-to-px('margin', @top);
+ }
+
+ // top and bottom
+ & when (@top > 0) and (@bottom = 0) {
+   .rem-to-px('margin-top', @top);
+   .rem-to-px('margin-bottom', @top);
+ }
+ & when (@top > 0) and (@bottom > 0) {
+   .rem-to-px('margin-top', @top);
+   .rem-to-px('margin-bottom', @bottom);
+ }
+
+ // left and right
+ & when (@right > 0) and (@left = 0) {
+   .rem-to-px('margin-right', @right);
+   .rem-to-px('margin-left', @right);
+ }
+ & when (@right > 0) and (@left > 0) {
+   .rem-to-px('margin-left', @left);
+   .rem-to-px('margin-right', @right);
+ }
+}
+
+.margin-top(@m)
+{
+ .rem-to-px('margin-top', @m);
+}
+
+.margin-right(@m)
+{
+ .rem-to-px('margin-right', @m);
+}
+
+.margin-bottom(@m)
+{
+ .rem-to-px('margin-bottom', @m);
+}
+
+.margin-left(@m)
+{
+ .rem-to-px('margin-left', @m);
+}
+
+
+.top(@o){.rem-to-px('top', @o);}
+.right(@o){.rem-to-px('right', @o);}
+.bottom(@o){.rem-to-px(' bottom', @o);}
+.left(@o){.rem-to-px('left', @o);}
+
+/* ----------------------------------------------
+===============  Flexbox Mixins  ================
+-----------------------------------------------*/
+.flex-direction(@direction)
+{
+ -webkit-flex-direction: @direction;
+ -moz-flex-direction: @direction;
+ -ms-flex-direction: @direction;
+ flex-direction: @direction;
+}
+.display-flex
+{
+ display: -moz-box;
+ display: -webkit-flexbox;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: -moz-flex;
+ display: flex;
+}
+
+
+/* ----------------------------------------------
+===============  Helper Helpers  ===============
+-----------------------------------------------*/
+.transition(@properties) {
+  -webkit-transition: @properties;
+  -moz-transition: @properties;
+  -o-transition: @properties;
+  transition: @properties;
+}
+
+.noselect
+{
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.transform(@string){
+	-webkit-transform: 	 ~'@{string}';
+	-moz-transform: 	 ~'@{string}';
+	-ms-transform: 		 ~'@{string}';
+	-o-transform: 		 ~'@{string}';
+}
+
+.rotate (@deg) {
+	-webkit-transform: 	 rotate(@deg);
+	-moz-transform: 	 rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+	-o-transform: 		 rotate(@deg);
+}
+
+.placeholder-color(@color: @gray)
+{
+  &::-webkit-input-placeholder { color: @color; }
+  &:-moz-placeholder           { color: @color; }
+  &::-moz-placeholder          { color: @color; }
+  &:-ms-input-placeholder      { color: @color; }
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.3, @start), color-stop(0.8, @stop));
+  background: -ms-linear-gradient(left, @start, @stop);
+  background: -moz-linear-gradient(center left, @start 30%, @stop 80%);
+  background: -o-linear-gradient(@stop, @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}

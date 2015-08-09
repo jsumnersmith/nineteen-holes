@@ -1,0 +1,6 @@
+.DS_Store
+.editorconfig
+.gitattributes
+.jscsrc
+.jshintrc
+.travis.yml

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1234.942px" height="1223px" viewBox="0 0 1234.942 1223" enable-background="new 0 0 1234.942 1223" xml:space="preserve">
+<g>
+	<defs>
+		<ellipse id="SVGID_1_" cx="620.568" cy="611.383" rx="592.375" ry="582.919"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<ellipse clip-path="url(#SVGID_2_)" fill="#4BA336" cx="617.309" cy="610.297" rx="575.445" ry="566.259"/>
+	<polygon clip-path="url(#SVGID_2_)" fill="#CC4E46" points="245.891,393.341 1089.53,437.476 356.013,870.037 	"/>
+	
+		<line clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-miterlimit="10" x1="215.006" y1="356.349" x2="761.78" y2="2948.426"/>
+	<g clip-path="url(#SVGID_2_)">
+		<polygon fill="none" points="725.968,668.683 387.049,752.151 339.247,545.215 678.162,461.75 		"/>
+		
+			<text transform="matrix(1.1461 -0.2823 0.2251 0.9743 374.2949 696.0259)" fill="#FFEEEE" font-family="'FrancoisOne-Regular'" font-size="206.5125" letter-spacing="7.625">19</text>
+	</g>
+</g>
+<ellipse fill="none" stroke="#4BA336" stroke-width="15" stroke-miterlimit="10" cx="618.865" cy="611.383" rx="592.375" ry="582.919"/>
+</svg>

@@ -1,0 +1,66 @@
+// ===============================================================
+// Header Styles
+// ===============================================================
+
+.nh-header
+{
+  position:fixed;
+  z-index: 10;
+  width: 100%;
+  .padding-top(1);
+  .padding-bottom(1);
+  background: #fff;
+  border-bottom: 1px solid @gray;
+}
+
+.nh-logo
+{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/nineteen-holes/images/nh-logo.svg');
+  background-size: 100% 100%;
+  background-position: center center;
+  transition: height .2s ease-in-out, width .2s ease-in-out;
+  -webkit-transition: height .2s ease-in-out, width .2s ease-in-out;
+  .short & {
+    // transform: rotate(360deg);
+    // -webkit-transform: rotate(360deg);
+    height: 50px;
+    width: 50px;
+    background-image: url('/nineteen-holes/images/nh-logo--small.svg')
+  }
+}
+.short .nh-site-title
+{
+  .font-size(3);
+  .line-height(3);
+}
+
+.nh-site-title
+{
+  .margin-left(1);
+  display: inline-block;
+  font-family: "Francois One";
+  .font-size(5);
+  .line-height(6);
+  vertical-align: top;
+  transition: font .2s ease-in-out;
+  -webkit-transition: font .2s ease-in-out;
+}
+
+.nh-menu > *
+{
+  display: inline-block;
+  .line-height(6);
+  vertical-align: middle;
+  .margin-right(.5);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+.short .nh-menu > *
+{
+  .line-height(3);
+}

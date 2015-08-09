@@ -1,0 +1,69 @@
+// ===============================================================
+// Styles for the Nav
+// ===============================================================
+.nh-nav
+{
+  position: fixed;
+  top:0;
+  right: 0;
+  margin-right: -100%;
+  background: @green-light;
+  color: @gray;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  .padding(1.5);
+  .font-size(1.5);
+  transition: margin-right .2s ease-in-out;
+  border-left: 5px solid @green;
+  .nh-menu-active &
+  {
+    margin-right: 0;
+  }
+}
+
+body
+{
+  transition: margin-left .2s ease-in-out;
+
+}
+
+body.nh-menu-active
+{
+  position: absolute;
+  margin-left: -400px;
+}
+
+// Text Styles ===================================
+.nh-nav-close
+{
+  display: block;
+  text-align: right;
+  .font-size(3);
+  .margin-top(1);
+  .margin-bottom(1);
+}
+
+.nh-nav-header
+{
+  display:block;
+  .margin-bottom(1);
+  .padding-bottom(.25);
+  color: darken(@green, 10%);
+  border-bottom: 3px solid @green;
+}
+
+.nh-nav-items
+{
+  .clearfix;
+  .margin-bottom(3);
+}
+
+.nh-nav-item a
+{
+  display: block;
+  .padding-top(.5);
+  .padding-bottom(.5);
+  color: @gray;
+  text-decoration: none;
+}
